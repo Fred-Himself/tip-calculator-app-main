@@ -1,0 +1,336 @@
+// ---------------- COLOR VARIABLES
+
+$strongCyan: hsl(172, 67%, 45%);
+$veryDarkCyan: hsl(183, 100%, 15%);
+$darkerGrayishCyan: hsl(186, 14%, 43%);
+$darkGrayishCyan: hsl(184, 14%, 56%);
+$lightGrayishCyan: hsl(185, 41%, 84%);
+$lighterGrayishCyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+// ---------------- GENERAL STYLE
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $lightGrayishCyan;
+  font: 400 24px 'Space Mono', monospace;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+input[type=number] {
+  color: $veryDarkCyan;
+}
+
+// ---------------- LOGO
+
+header {
+  text-align: center;
+
+  img {
+    margin: 163px 0 78px;
+  }
+}
+
+// ---------------- CALCULATOR
+
+#calculator {
+  background-color: rgba($white, 1);
+  display: flex;
+  width: 100%;
+  max-width: 922px;
+  margin: 0 auto;
+  border-radius: 24px;
+}
+
+#leftSide, #rightSide {
+  width: 100%;
+  margin: 32px;
+  padding: 12px 14px;
+  border-radius: 16px;
+}
+
+#leftSide {
+  background-color: rgba($white, 1);
+  margin-right: 16px;
+}
+
+#rightSide {
+  background-color: rgba($veryDarkCyan, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 16px;
+}
+
+// --- BILL
+
+.bill {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 34px;
+
+  &__amount {
+    font-size: 1rem;
+    color: $darkerGrayishCyan;
+  }
+
+  #billAmount {
+    background: $lighterGrayishCyan url("../images/icon-dollar.svg") no-repeat;
+    background-size: 14px auto;
+    background-position: 11px center;
+    text-align: right;
+    font: 700 1.6rem 'Space Mono', monospace;
+    margin: 4px 2px;
+    padding: 4px 0;
+    border: 2px solid rgba($strongCyan, 0);
+    border-radius: 6px;
+    color: rgba($veryDarkCyan, 1);
+    outline: none;
+
+    &:focus {
+      border: 2px solid rgba($strongCyan, 1);
+    }
+  }
+}
+
+// --- TIPS
+
+.tips {
+  margin-bottom: 38px;
+
+  &__title {
+    font-size: 1rem;
+    color: $darkerGrayishCyan;
+  }
+
+  &__selection {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 18px;
+
+    .btn {
+      background-color: rgba($veryDarkCyan, 1);
+      font: 700 1.5rem 'Space Mono', monospace;
+      padding: 6px 0;
+      color: $white;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($lightGrayishCyan, 1);
+        color: rgba($veryDarkCyan, 1);
+      }
+    }
+
+    .btnActive {
+      background-color: rgba($strongCyan, 1);
+      color: $veryDarkCyan;
+    }
+
+    .custom {
+      background-color: rgba($lighterGrayishCyan, 1);
+      font: 700 1.5rem 'Space Mono', monospace;
+      width: 100%;
+      text-align: right;
+      border: 2px solid rgba($strongCyan, 0);
+      border-radius: 5px;
+      outline: none;
+
+      &::placeholder {
+        text-align: center;
+      }
+
+      &:focus {
+        border: 2px solid rgba($strongCyan, 1);
+      }
+    }
+  }
+}
+
+// --- PEOPLE
+
+.people {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 1rem;
+    display: flex;
+    color: $darkerGrayishCyan;
+
+    #notZero {
+      display: none;
+      flex: 1;
+      text-align: right;
+      color: hsl(15, 31%, 58%);
+    }
+  }
+
+  #billPeople {
+    background: $lighterGrayishCyan url("../images/icon-person.svg") no-repeat;
+    background-size: 14px auto;
+    background-position: 11px center;
+    text-align: right;
+    font: 700 1.6rem 'Space Mono', monospace;
+    margin: 6px 2px;
+    padding: 4px 0;
+    border: 2px solid rgba($strongCyan, 0);
+    border-radius: 6px;
+    color: rgba($veryDarkCyan, 1);
+    outline: none;
+
+    &:focus {
+      border: 2px solid rgba($strongCyan, 1);
+    }
+
+    &.noZero {
+      border: 2px solid hsl(15, 31%, 58%);
+    }
+  }
+}
+
+// --- TIP AMOUNT AND TOTAL PER PERSON
+
+.amountBox {
+  font-weight: 700;
+  margin: 28px 24px 0;
+}
+
+.sumPerPerson {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+
+  .sumText {
+    font-size: 1rem;
+    color: $white;
+  }
+
+  .sumPerson {
+    font-size: 0.8rem;
+    color: $darkGrayishCyan;
+  }
+
+  .sumAmount {
+    font-size: 3rem;
+    flex: 1;
+    text-align: right;
+    color: $strongCyan;
+  }
+}
+
+// --- RESET BUTTON
+
+.btnReset:disabled {
+  background-color: rgba($strongCyan, 0.4);
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: rgba($strongCyan, 0.4);
+  }
+}
+
+.btnReset {
+  font-size: 1.125rem;
+  font-weight: 700;
+  background-color: rgba($strongCyan, 1);
+  height: 48px;
+  margin: 0 24px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($lightGrayishCyan, 1);
+  }
+}
+
+// ---------------- ATTRIBUTION
+
+.attribution {
+  font-size: 11px;
+  margin: 200px 0 15px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@media(max-width: 820px) {
+
+  // ---------------- LOGO
+  
+  header {
+  
+    img {
+      margin: 50px 0 30px;
+    }
+  }
+  #calculator {
+    flex-direction: column;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  #leftSide {
+    margin: 0;
+    padding: 30px 6px 22px 6px;
+  }
+
+  #rightSide {
+    margin: 0 0 25px;
+    padding: 37px 24px 22px;
+  }
+
+  // --- BILL
+  
+  .bill {
+    margin-bottom: 30px;
+  }
+
+  // --- TIPS
+  
+  .tips {
+    margin-bottom: 32px;
+  
+    &__selection {
+      grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    }
+  }
+
+  // --- TIP AMOUNT AND TOTAL PER PERSON
+  
+  .amountBox {
+    margin: 0;
+  }
+
+  .sumPerPerson {
+    .sumAmount {
+      font-size: 1.9rem;
+    }
+  }
+
+  // --- RESET BUTTON
+  
+  .btnReset {
+    margin: 0;
+    margin-top: 8px;
+  }
+
+}
