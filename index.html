@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <!-- title -->
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="./styles/main.css" />
+
+  </head>
+
+  <body>
+
+    <main>
+      <header><img src="./images/logo.svg" alt="SPLITTER" /></header>
+      <div id="calculator">
+        <div id="leftSide">
+          <div class="bill">
+            <label for="billAmount" class="bill__amount">Bill</label>
+            <input type="number" name="billAmount" id="billAmount" min="0.00" step="0.01" placeholder="0.00" />
+          </div>
+          <div class="tips">
+            <div class="tips__title">Select Tip %</div>
+            <div class="tips__selection">
+              <button class="btn" id="tip5" value="5">5%</button>
+              <button class="btn" id="tip10" value="10">10%</button>
+              <button class="btn" id="tip15" value="15">15%</button>
+              <button class="btn" id="tip25" value="25">25%</button>
+              <button class="btn" id="tip50" value="50">50%</button>
+              <input type="number" class="custom" name="customTip" id="customTip" min="0" step="1" placeholder="Custom" />
+            </div>
+          </div>
+          <div class="people">
+            <div class="people__title">
+              <label for="billPeople" class="numPeople">Number of People</label>
+              <div id="notZero">Can't be zero</div>
+            </div>
+            <input type="number" name="billPeople" id="billPeople" min="0" step="1" placeholder="0" />
+          </div>
+        </div>
+        <div id="rightSide">
+          <div class="amountBox">
+            <div class="sumPerPerson">
+              <div class="sumLabel">
+                <div class="sumText">Tip Amount</div>
+                <div class="sumPerson">/ person</div>
+              </div>
+              <div class="sumAmount">$<span class="sumDisplay" id="tipPerPers">0.00</span></div>
+            </div>
+            <div class="sumPerPerson">
+              <div class="sumLabel">
+                <div class="sumText">Total</div>
+                <div class="sumPerson">/ person</div>
+              </div>
+              <div class="sumAmount">$<span class="sumDisplay" id="totPerPers">0.00</span></div>
+            </div>
+          </div>
+          <button class="btnReset" id="reset" disabled>RESET</button>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">FredHimself</a>.
+      <div id="result"></div>
+    </div>
+
+    <!-- scripts -->
+    <script src="scripts.js"></script>
+
+  </body>
+
+</html>
