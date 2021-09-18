@@ -1,0 +1,335 @@
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background-color: #c5e4e7;
+  font: 400 24px 'Space Mono', monospace;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+input[type=number] {
+  color: #00494d;
+}
+
+header {
+  text-align: center;
+}
+
+header img {
+  margin: 163px 0 78px;
+}
+
+#calculator {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 922px;
+  margin: 0 auto;
+  border-radius: 24px;
+}
+
+#leftSide, #rightSide {
+  width: 100%;
+  margin: 32px;
+  padding: 12px 14px;
+  border-radius: 16px;
+}
+
+#leftSide {
+  background-color: white;
+  margin-right: 16px;
+}
+
+#rightSide {
+  background-color: #00494d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 16px;
+}
+
+.bill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 34px;
+}
+
+.bill__amount {
+  font-size: 1rem;
+  color: #5e7a7d;
+}
+
+.bill #billAmount {
+  background: #f4fafa url("../images/icon-dollar.svg") no-repeat;
+  background-size: 14px auto;
+  background-position: 11px center;
+  text-align: right;
+  font: 700 1.6rem 'Space Mono', monospace;
+  margin: 4px 2px;
+  padding: 4px 0;
+  border: 2px solid rgba(38, 192, 171, 0);
+  border-radius: 6px;
+  color: #00494d;
+  outline: none;
+}
+
+.bill #billAmount:focus {
+  border: 2px solid #26c0ab;
+}
+
+.tips {
+  margin-bottom: 38px;
+}
+
+.tips__title {
+  font-size: 1rem;
+  color: #5e7a7d;
+}
+
+.tips__selection {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+  -ms-grid-columns: (1fr)[3];
+      grid-template: repeat(2, 1fr)/repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 18px;
+}
+
+.tips__selection .btn {
+  background-color: #00494d;
+  font: 700 1.5rem 'Space Mono', monospace;
+  padding: 6px 0;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tips__selection .btn:hover {
+  background-color: #c5e4e7;
+  color: #00494d;
+}
+
+.tips__selection .btnActive {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
+.tips__selection .custom {
+  background-color: #f4fafa;
+  font: 700 1.5rem 'Space Mono', monospace;
+  width: 100%;
+  text-align: right;
+  border: 2px solid rgba(38, 192, 171, 0);
+  border-radius: 5px;
+  outline: none;
+}
+
+.tips__selection .custom::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.tips__selection .custom:-ms-input-placeholder {
+  text-align: center;
+}
+
+.tips__selection .custom::-ms-input-placeholder {
+  text-align: center;
+}
+
+.tips__selection .custom::placeholder {
+  text-align: center;
+}
+
+.tips__selection .custom:focus {
+  border: 2px solid #26c0ab;
+}
+
+.people {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.people__title {
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #5e7a7d;
+}
+
+.people__title #notZero {
+  display: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  color: #b58373;
+}
+
+.people #billPeople {
+  background: #f4fafa url("../images/icon-person.svg") no-repeat;
+  background-size: 14px auto;
+  background-position: 11px center;
+  text-align: right;
+  font: 700 1.6rem 'Space Mono', monospace;
+  margin: 6px 2px;
+  padding: 4px 0;
+  border: 2px solid rgba(38, 192, 171, 0);
+  border-radius: 6px;
+  color: #00494d;
+  outline: none;
+}
+
+.people #billPeople:focus {
+  border: 2px solid #26c0ab;
+}
+
+.people #billPeople.noZero {
+  border: 2px solid #b58373;
+}
+
+.amountBox {
+  font-weight: 700;
+  margin: 28px 24px 0;
+}
+
+.sumPerPerson {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+}
+
+.sumPerPerson .sumText {
+  font-size: 1rem;
+  color: white;
+}
+
+.sumPerPerson .sumPerson {
+  font-size: 0.8rem;
+  color: #7f9c9f;
+}
+
+.sumPerPerson .sumAmount {
+  font-size: 3rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  color: #26c0ab;
+}
+
+.btnReset:disabled {
+  background-color: rgba(38, 192, 171, 0.4);
+  cursor: not-allowed;
+}
+
+.btnReset:disabled:hover {
+  background-color: rgba(38, 192, 171, 0.4);
+}
+
+.btnReset {
+  font-size: 1.125rem;
+  font-weight: 700;
+  background-color: #26c0ab;
+  height: 48px;
+  margin: 0 24px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnReset:hover {
+  background-color: #c5e4e7;
+}
+
+.attribution {
+  font-size: 11px;
+  margin: 200px 0 15px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media (max-width: 820px) {
+  header img {
+    margin: 50px 0 30px;
+  }
+  #calculator {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+  #leftSide {
+    margin: 0;
+    padding: 30px 6px 22px 6px;
+  }
+  #rightSide {
+    margin: 0 0 25px;
+    padding: 37px 24px 22px;
+  }
+  .bill {
+    margin-bottom: 30px;
+  }
+  .tips {
+    margin-bottom: 32px;
+  }
+  .tips__selection {
+    -ms-grid-rows: (1fr)[3];
+    -ms-grid-columns: (1fr)[2];
+        grid-template: repeat(3, 1fr)/repeat(2, 1fr);
+  }
+  .amountBox {
+    margin: 0;
+  }
+  .sumPerPerson .sumAmount {
+    font-size: 1.9rem;
+  }
+  .btnReset {
+    margin: 0;
+    margin-top: 8px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
